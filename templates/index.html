@@ -1,0 +1,328 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Media Queries</title>
+    <link href="static/style.css" type="text/css" rel="stylesheet">
+    <link rel="icon" href="static/knott.png">
+  </head>
+  <body>
+
+<header>
+<himg></himg>
+<ttl>Nachorny - Landscaping & Design</ttl>
+<contact>Nick Nachorny<br><a href="tel:408-806-7890">(408) 806-1674</a><br><a href="mailto:contact@nachorny.design">contact@nachorny.design</a></contact>
+</header>
+
+<script>
+function subdsc( dsc ) {
+  var container      =  "A container in gardening is a small, enclosed and usually portable object used for displaying live flowers or plants.";
+  var demonstration  =  "Demonstration gardens showcase plants and sustainable gardening techniques appropriate to local areas and provide learning opportunities for home gardeners on design, planting, and maintenance practices. They are open to the public free of charge.";
+  var organic        =  "Organic gardening is a terminology that simply refers to growing of plants, vegetables, and fruits in the best natural way without the use of pesticides or synthetic chemical fertilizers.";
+  var seed           =  "Planting and seeding Early autumn, spring, and early summer are the primary seasons to seed, lay sod (turf), plant 'liners', or 'sprig' new lawns, when the soil is warmer and air cooler.";
+  var sod            =  "Sod or turf is grass and the part of the soil beneath it held together by its roots or another piece of thin material.";
+  var synthetic      =  "Artificial turf is a surface of synthetic fibers made to look like natural grass. It is most often used in arenas for sports that were originally or are normally played on grass.";
+  var stone          =  "Block paving also known as brick paving is a commonly used decorative method of creating a pavement or hardstanding. The main benefit of bricks over other materials is that individual bricks can later be lifted up and replaced. This allows for remedial work to be carried out under the surface of the paving without leaving a lasting mark once the paving bricks have been replaced.";
+  var concrete       =  "Patios are most commonly paved with concrete or stone slabs (also known as paving flags). They can also be created using bricks, block paving, tiles, cobbles, or gravel.";
+  var tile           =  "Mosaic tiles may be laid in various patterns. Floor tiles are typically set into mortar consisting of sand, cement and often a latex additive for extra adhesion. The spaces between the tiles are commonly filled with sanded or unsanded floor grout, but traditionally mortar was used.";
+  var turf           =  "AstroTurf is an American subsidiary that produces artificial turf for playing surfaces in sports. The original AstroTurf product was a short-pile synthetic turf.";
+  var picket         =  "Picket fences are a type of fence often used decoratively for domestic boundaries, distinguished by their evenly spaced vertical boards, the pickets, attached to horizontal rails.";
+  var chain          =  "A chain-link fence (also referred to as wire netting, wire-mesh fence, chain-wire fence, cyclone fence, hurricane fence, or diamond-mesh fence) is a type of woven fence usually made from galvanized or LLDPE-coated steel wire.";
+  var wall           =  "Modern living spaces and old stone walls strong character to this single family home.";
+  var metal          =  "An iron railing is a fence made of iron. This may either be wrought iron, which is ductile and durable and may be hammered into elaborate shapes when hot, or the cheaper cast iron, which is of low ductility and quite brittle.";
+  var access         =  "An access-controlled entry, such as a door, turnstile, parking gate, elevator, or other physical barrier.";
+  var security       =  "Designed to prevent forces entry and only permit those with permission to enter";
+  var whicket        =  "A wicket gate, or simply a wicket, is a pedestrian door or gate, particularly one built into a larger door or into a wall or fence.";
+  var wood           =  "Options for surfacing the ground around a playset include sand, pea gravel, wood chips, shredded rubber, and asphalt. The perimeter of the play yard is often made from concrete or wood. The depth of the surfacing on the play area should be based on a CPSC recommendations for the type of surface materials and maximum possible fall height.";
+  var prefab         =  "Assembly of any prefabricated play structure.";
+
+
+  var subt = eval( dsc );
+  var subd = document.getElementById('subdsc');
+  subd.setAttribute("style","display:inline-block");
+  subd.innerHTML = subt;
+}
+
+  function clears( oid ) {
+     document.getElementById( oid ).value = "";
+  }
+
+
+function showpg( pg ) {
+  <!-- hide old select, show new -->
+
+  var nw  =  document.getElementById(pg);			<!-- new object -->
+
+  var lo  =  document.getElementById('selpg').value;            <!-- last object -->
+
+  var ol  =  document.getElementById( lo );
+
+  var sb  =  lo + "btn";					<!-- selected button -->
+  var pn  =  lo + "panel";					<!-- subpanel hide -->
+
+  var hc  =  document.getElementById( sb );			<!-- hide class -->
+  var sp  =  document.getElementById( pn );
+
+  console.log(" old " + lo + " new " + pg);
+
+  ol.setAttribute("style", "display:none");
+  nw.setAttribute("style", "display:inline");
+
+  <!--hc.className = "accordion"; -->
+  <!--hc.onchange = selectChange; -->
+  <!--p.setAttribute("style", "display:none"); -->
+     document.getElementById('selpg').value = pg;
+}
+
+function getquote() {
+  <!-- cors is not secure without the ability to verify remote host via  ccgi but whatevs, appengine sucks -->
+
+  var fnme    =  document.getElementById('cnme').value;
+  var lnme    =  document.getElementById('lnme').value;
+  var ceml    =  document.getElementById('ceml').value;
+  var cpne    =  document.getElementById('cpne').value;  
+  var cmsg    =  document.getElementById('cmsg').innerHTML;
+
+  var data    =  {};
+
+  data.fnme   =  fnme;
+  data.lnme   =  lnme;
+  data.ceml   =  ceml;
+  data.cpne   =  cpne;
+  data.cmsg   =  cmsg;
+
+  var http    =  new XMLHttpRequest();
+  var url     =  "quote";
+  var params  =  JSON.stringify( data );
+
+  http.open("POST", url, true);
+
+  http.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  http.setRequestHeader("Content-length", params.length);
+  http.setRequestHeader("Connection", "close");
+
+  http.onreadystatechange = function() {
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+    }
+  }
+
+  http.send(params);
+}
+
+
+</script>
+
+
+<div class="wrapper">
+
+<lft>
+  <div class="box a"><br>
+
+<divi class="lft">
+  <button id="gardenbtn" class="accordion" onclick="showpg('garden')" >Garden</button>
+  <div class="panel" id="gardenpanel" style="display:none">
+  <p onclick="subdsc('container');">Container</p>
+  <p onclick="subdsc('demonstration');">Demonstration</p>
+  <p onclick="subdsc('organic');">Organic</p>
+</div></divi>
+
+<divi class="lft">
+<button id="patiobtn" class="accordion"  onclick="showpg('patio')">Patio</button>
+<div class="panel" id="patiopanel" style="display:none">
+  <p onclick="subdsc('stone');">Stone</p>
+  <p onclick="subdsc('concrete');">Concrete</p>
+  <p onclick="subdsc('tile');">Tile</p>
+  <p onclick="subdsc('turf');">Astro Turf</p>
+</div></divi>
+
+<divi class="lft">
+<button id="lawnbtn" class="accordion"  onclick="showpg('lawn')">Lawn</button>
+<div class="panel" id="lawnpanel" style="display:none">
+  <p onclick="subdsc('seed');">Seed</p>
+  <p onclick="subdsc('sod');">Sod</p>
+  <p onclick="subdsc('synthetic');">Synthetic</p>
+</div></divi>
+
+<divi class="lft">
+<button id="fencebtn" class="accordion"  onclick="showpg('fence')">Fencing</button>
+<div class="panel" id="fencepanel" style="display:none">
+  <p onclick="subdsc('picket');">Wood / Picket</p>
+  <p onclick="subdsc('chain');">Chain</p>
+  <p onclick="subdsc('wall');">Wall</p>
+  <p onclick="subdsc('metal');">Metal</p>
+</div></divi>
+
+<divi class="lft">
+<button id="gatebtn" class="accordion"  onclick="showpg('gate')">Gates</button>
+<div class="panel">
+  <p  onclick="subdsc('access');">Access</p>
+  <p  onclick="subdsc('security');">Security</p>
+  <p  onclick="subdsc('whicket');">Whicket</p>
+</div></divi>
+
+<!-- <divi class="lft"> -->
+<button id="playbtn" class="accordion"  onclick="showpg('play')">Playground</button>
+<div class="panel" id="playpanel" style="display:none">
+  <p  onclick="subdsc('wood');">Wood Design</p>
+  <p onclick="subdsc('prefab');">Prefabricated</p>
+</div>
+</divi>
+
+<divi class="lft">
+  <button id="playbtn" class="accordion"  onclick="showpg('review')">Testimony</button>
+</divi>
+
+
+</div></lft>
+
+
+<h1>
+<div class="box b">
+
+<home id="home" style="display:inline">
+  For over eight years Nachorny Landscaping and Design has been a leader in innovative landscaping techniques throughout the greater bay area.
+</home>
+
+<center>
+<garden id="garden" style="display:none">
+<imgz>
+  <img src="static/garden1.jpg" />
+  <img src="static/garden2.jpg" />
+  <img src="static/garden3.jpg" />
+  <img src="static/garden4.jpg" />
+  <img src="static/garden5.jpg" />
+  <img src="static/garden6.jpg" />
+</imgz>
+</garden>
+
+<patio id="patio"  style="display:none">
+<imgz>
+  <img src="static/patio1.jpg" />
+  <img src="static/patio2.jpg" />
+  <img src="static/patio3.jpg" />
+  <img src="static/patio4.jpg" />
+  <img src="static/patio5.jpg" />
+  <img src="static/patio6.jpg" />
+</imgz>
+</patio>
+
+<lawn  id="lawn" style="display:none"> 
+<imgz>
+  <img src="static/grass1.jpg" />
+  <img src="static/grass2.jpg" />
+  <img src="static/grass3.jpg" />
+  <img src="static/grass4.jpg" />
+  <img src="static/grass5.jpg" />
+  <img src="static/grass6.jpg" />
+</imgz>
+</lawn>
+
+<fence id="fence"  style="display:none">
+<imgz>
+  <img src="static/fence1.jpg" />
+  <img src="static/fence2.jpg" />
+  <img src="static/fence3.jpg" />
+  <img src="static/fence4.jpg" />
+  <img src="static/fence5.jpg" />
+  <img src="static/fence6.jpg" />
+</imgz>
+</fence>
+
+<gate id="gate" style="display:none"> 
+<imgz>
+  <img src="static/gate1.jpg" />
+  <img src="static/gate2.jpg" />
+  <img src="static/gate3.jpg" />
+  <img src="static/gate4.jpg" />
+  <img src="static/gate5.jpg" />
+  <img src="static/gate6.jpg" />
+</imgz>
+</gate>
+
+<play  id="play" style="display:none">
+<imgz>
+  <img src="static/play1.jpg" />
+  <img src="static/play2.jpg" />
+  <img src="static/play3.jpg" />
+  <img src="static/play4.jpg" />
+  <img src="static/play5.jpg" />
+  <img src="static/play6.jpg" />
+</imgz>
+</play></center>
+
+<review  id="review" style="display:none;font-size:12px;">
+“It was a nasty job and Nik and his co-worked did a stellar job - quickly, professionally and a very reasonable price.”  <i>-Jody P.</i>  Mill Valley
+<br><br>	
+“I would definitely hire him in a heart beat for my home and any future project, and will refer my friends to him!”  <i>-Gerald Rogers</i>  Novato
+<br><br>
+“When the project was done, the yard looked great, all the debris was removed and the trees are all thriving.”   <i>-Suzan Bubble</i>  San Rafael
+<br><br>	
+“3 hours later, the tree, stump, and roots are all gone, hardly a trace of the tree that was there earlier.”  <i>-Sheila Tomas</i>  Marin City
+<br><br>
+I couldn't wait to write this review.<br><br>
+They just finished my tree cut. Very nice people, they really know how. Dig the roots, cleaned up....! After they left I thought want one piece as something to keep it, I called John, he laughed at than said no problem, I will put one piece in his car and send it to my house.<br>
+what a impressive service!<br><br>
+Nachorny Design: Thank you very very much!  <i>-Lihn Ling</i>  Santa Rosa
+
+
+</review>
+
+
+</div>
+</h1>
+
+<div class="box c" id="bxc"><h2>
+Get a Quote<br>
+
+<input id="cnme" type="text" value="First Name" onclick="clears('cnme');" /><br id="br">
+<input id="lnme" type="text" value="Last Name"  onclick="clears('lnme');" /><br id="br">
+<input id="ceml" type="text" value="Email"      onclick="clears('ceml');" /><br id="br">
+<input id="cpne" type="text" value="Phone"      onclick="clears('cpne');"/><br id="br">
+
+<!--<input id="cmsg" type="text" value="Describe Your Project" /> -->
+<textarea id="cmsg" rows="4" cols="22" onclick="document.getElementById('cmsg').innerHTML = '';">
+Describe your project
+</textarea><br>
+<button type="submit" onclick="getquote()">Submit</button>
+<hr><br> 
+
+</h2>
+<h2>
+<lbl>
+<label id="subdsc" style="display:none">Site Created By Bleeding Egg Media Group</label></lbl>
+
+</h2></div>
+
+<!--<footer>The Book of the Faces</footer> -->
+
+
+<input type="hidden" id="selpg" value="home"></input>
+
+
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion -->
+<script>
+
+
+function accordzip(){
+  <!-- hide accordian sub elements -->
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+     acc[i].addEventListener("click", function() {
+       this.classList.toggle("active");
+       var panel = this.nextElementSibling;
+       if (panel.style.display === "block") {
+         panel.style.display = "none";
+       } else {
+        panel.style.display = "block";
+       }
+     });
+  }
+}
+
+accordzip();
+</script>
+
+</body>
+</html>
+

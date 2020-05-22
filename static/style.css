@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+button{
+  background-image: linear-gradient(to right, #e9e9dd, #e9e9dd, #b6b6b6);
+  width: 110%;
+  display:inline-block;
+  font-size:26px;
+  font-family: 'Anton', sans-serif;
+}
+
+ttl { font-family: 'Anton', sans-serif; }
+
+review {
+  overflow-x:hidden;
+  overflow-y:scroll;
+  font-size:16px;
+}
+
+contact {
+  position:absolute;
+  text-align:right;
+  font-size:16px;
+  top:0;
+  right:0;
+  float:right:
+  display:inline;
+  margin-top:5px;
+  margin-right:25px;
+}
+
+home{
+  padding-left:5%;
+  left:5%;
+  margin-left:5%;
+}
+
+.subdsc {
+  width: 50%
+  overflow-y:scroll;
+}
+
+p:active, p:hover {
+  text-indent: 1em;
+}
+p{
+  width:100%;
+  font-size:50%;
+  margin:0;
+}
+
+#bxc {
+  overflow:hidden;
+}
+
+div{
+  overflow-x:hidden;
+}
+
+lbl{
+  position:fixed;
+  width:14%;
+  display:relative;
+  font-size:16px;
+}
+
+lft{
+  width:23%;
+  overflow-x:hidden;
+  display:inline-block;
+}
+
+.lft{
+  overflow-x:hidden;
+}
+
+imgz{
+  position:relative;
+  overflow-x:hidden;
+  margin:auto;
+/*  display:flex;
+  flex-wrap:wrap;
+  margin:auto; */
+}
+
+img{
+  width:28%;
+  height:28%;
+}
+
+garden{
+  position:relative;
+  width: 66%;
+  height: 70%;
+}
+
+.accordion {
+  float:right;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+/*  width: 100%; */
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size:26px;
+  transition: 0.4s;
+  overflow-y:hidden;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+  border-radius:25px;
+  text-align:center;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-image: linear-gradient(to left, #e9e9dd, #e9e9dd, #b6b6b6);
+  border-Etop: 5px solid #e9e9dd;
+  overflow: hidden;
+  border-radius: 25px;
+  width:100%;
+  color:black;
+} /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion */
+
+footer {
+  position:absolute;
+  bottom:0;
+  background-image: linear-gradient(#e9e9dd, #b6b6b6, #b6b6b6);
+  display:inline-block;
+  /*  float:bottom; */
+  height:10%;
+  width: 130%;
+  left:-10%;
+  text-align:center;
+}
+
+.wrapper {
+  overflow:hidden;;
+  display: flex;
+  grid-gap:10px;
+  flex-wrap:grid;
+  grid-template-columns: 15% 70% 15%;
+  height:90%;
+  color: #black;
+}
+
+.box {
+  background-image: horizontal-gradient(#e9e9dd, #e9e9dd, #b6b6b6);
+  color: #black;
+  overflow-x:hidden;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+  border-radius:25px;
+/*  width:75%;
+  margin:auto; */
+}
+
+.box b {
+  width: 350%;
+  position:fixed;
+  margin:auto;
+/*  overflow-y: scroll; */
+}
+
+div .box .c {
+  position:fixed;
+  width:30%;
+}
+
+divi {
+  line-height: 3em;
+}
+
+header {
+  background-color:yellow;
+  top:0;
+  height:10%;
+  width: 100%;
+  text-align:center;
+  font-family: 'Comic Neue', cursive;
+  font-size:26px;
+  border-radius: 50px 50px;
+  background-image: linear-gradient(#e9e9dd, #e9e9dd, #b6b6b6);
+}
+
+himg{
+  float:left;
+  width:64px;
+  height:64px;
+  background-image: url("static/knott.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  /*  display:absolute; */
+}
+
+body {
+  background-color: #e9e9dd;
+  margin: 20px;
+  overflow:hidden;
+}
+
+fmain, fsub {
+  display: flex;
+  flex-direction: column;
+  top:0;
+}
+
+fmain {
+  float:left;
+  background-color:green;
+}
+
+fsub {
+  float:right;
+  background-color:green;
+}
+
+h1{
+  width:70%;
+  overflow-x:hidden;
+}
+
+
+@media ( max-width: 995px ) {
+  img {
+     width:175px;
+     height:175px;
+  }
+  contact {
+     font-size: 12px;
+  }
+  imgz{
+     overflow-y:scroll;
+  }
+  fmain {
+     float:top;
+  }
+  div {
+     height:auto;
+     width:100%;
+  }
+  fsub {
+     float:bottom;
+  }
+  divi { display: inline; text-align:center; margin-left:13%; }
+
+  .box {
+     height:none;
+     font-size:75%;
+  }
+
+  .wrapper {
+     grid-template-columns: 100%;
+     grid-template-rows: 15% 70% 15%;
+     display:flex;
+     flex-wrap:wrap;
+     overflow-y:scroll;
+    /* position:absolute; */
+  }
+  .wrapper .box {
+     width:100%;
+     display:absolute;
+     /*border: 4px solid; */
+  }
+
+  .wrapper .box a {
+     text-align:center;
+  }
+
+  footer {
+     position:relative;
+     width:135%;
+  }
+  lft {
+     width:93%;
+  }
+   h2 {
+     width:93%;
+     line-height:.5em;
+  }
+  #br{
+    display:none;
+  }
+  body {
+    overflow:hidden;
+  }  
+  button {
+     display:inline;
+     margin:auto;
+     position:relative;
+     width:250px;
+  }
+  .accordian {
+     width:50%;
+  }
+  p{
+     width:250px;
+     font-size:100%;
+     margin:0;
+  }
+  lft{
+     margin-left:0;
+  }
+  imgz{
+     width:150%;
+  }
+}
+
+@media ( max-width: 595px ) {
+  img{
+     width:100px;
+     height:100px;
+  }
+  body {
+    overflow-y:scroll;
+  }
+  footer {
+     display:none;
+  }
+
+  .wrapper {
+   display:flex;
+   margin:auto;
+   flex-wrapper:stretch;
+  }
+
+  div .box a {
+     display:inline;
+     float:left;
+     width: 30%;
+     margin:auto;
+  }
+  div .box b {
+     display:inline-block;
+     height: 100%;
+     float: right:
+  }
+
+  wrapper .box.c {
+     display:relative;
+     position:absolute;
+     width:50%;
+     bottom:0;
+   }
+  header, footer {
+     display: none;
+  }
+
+}
+
+/* QUOTE: https://codepen.io/outerwhitespace/pen/EOGyzK */
